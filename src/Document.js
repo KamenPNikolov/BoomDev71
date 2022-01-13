@@ -1,7 +1,12 @@
 import { useState } from "react";
 
+
 export default function Document(props){
     const [buttonDisabled,setButtonRead]=useState(true);
+
+    const enableButton = ()=> {
+        props.enable();
+    }
     return(<div>
         <h1 className = "title" >{props.title}</h1>
             <div className = "content"  >
@@ -11,13 +16,13 @@ export default function Document(props){
                 console.log(e.target.scrollHeight - Math.floor(e.target.scrollTop));
                  if((e.target.scrollHeight - Math.floor(e.target.scrollTop) === e.target.clientHeight) || (e.target.scrollHeight - Math.ceil(e.target.scrollTop) === e.target.clientHeight)){  
                  setButtonRead((buttonDisabled)=>{return false;});
-
+                 console.log(enableButton());
              }
              }}
                  
                  >{props.content}</div>
                    
-            <button disabled = {buttonDisabled}>I Agree</button>
+            {/*<button disabled = {buttonDisabled}>I Agree</button>*/}
             </div>
         </div>
 
