@@ -8,7 +8,7 @@ export default function Document(props){
              onScroll={(e)=> {
                 console.log(e.target.scrollHeight + " "+ e.target.scrollTop + " "+ Math.floor(e.target.scrollTop)  + " "+  e.target.clientHeight);
                 console.log(e.target.scrollHeight - Math.floor(e.target.scrollTop));
-                 if(e.target.scrollHeight - Math.floor(e.target.scrollTop) === e.target.clientHeight){  
+                 if((e.target.scrollHeight - Math.floor(e.target.scrollTop) === e.target.clientHeight) || (e.target.scrollHeight - Math.ceil(e.target.scrollTop) === e.target.clientHeight)){  
                  setButtonRead((buttonRead)=>{return true;});
              }
              }} >
