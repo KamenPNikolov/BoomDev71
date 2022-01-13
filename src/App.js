@@ -6,7 +6,7 @@ function App() {
   const [contentText,setContent] = useState("");
 
   const fetchContent = ()=>{
-    fetch("https://jaspervdj.be/lorem-markdownum/markdown.txt").then((result)=>result.text()).then((text)=>
+    fetch("https://jaspervdj.be/lorem-markdownum/markdown.txt").then((response)=>response.text()).then((text)=>
     {
       setContent((contentText)=> {return text;});
     });
