@@ -4,11 +4,11 @@ import Document from "./Document";
 
 function App() {
   const [contentText,setContent] = useState("");
-  const [buttonDisabled, enable] = useState(true);
+ /* const [buttonDisabled, enable] = useState(true);
   
   const enableButton = () => {
     enable((buttonDisabled)=>{return false;});
-  }
+  }*/
 
   const fetchContent = ()=>{
     fetch("https://jaspervdj.be/lorem-markdownum/markdown.txt").then((response)=>response.text()).then((text)=>
@@ -33,8 +33,8 @@ function App() {
           Edit the <code>./src</code> folder to add components.
         </div>
         <div>
-          <Document title = "Terms and Conditions" content = {contentText} enable = {enableButton}></Document>
-          <button disabled = {buttonDisabled}>I Agree</button>
+          <Document title = "Terms and Conditions" content = {contentText} ></Document> {/*enable = {enableButton} */}
+          {/*<button disabled = {buttonDisabled}>I Agree</button>*/}
         </div>
       </div>
     </div>
